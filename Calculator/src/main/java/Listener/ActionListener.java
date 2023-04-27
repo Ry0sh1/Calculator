@@ -30,6 +30,8 @@ public class ActionListener implements java.awt.event.ActionListener {
                 out.setText(String.valueOf(first_arg + sec_arg));
             } else if (op == '-') {
                 out.setText(String.valueOf(first_arg - sec_arg));
+            } else if (op == '%') {
+                out.setText(String.valueOf(first_arg % sec_arg));
             }
 
         }
@@ -56,6 +58,31 @@ public class ActionListener implements java.awt.event.ActionListener {
             bp.setOperator('+');
             bp.setFirst_arg(Double.parseDouble(out.getText()));
             out.setText("");
+
+        } else if (b.getText().equals("%")) {
+
+            bp.setOperator('%');
+            bp.setFirst_arg(Double.parseDouble(out.getText()));
+            out.setText("");
+
+        }else if (b.getText().equals("CE")) {
+
+            out.setText("");
+
+        }else if (b.getText().equals("C")) {
+
+            out.setText("");
+            bp.setOperator('+');
+            bp.setFirst_arg(0);
+            bp.setSec_arg(0);
+
+        }else if (b.getText().equals("L")) {
+
+            String txt = out.getText();
+            out.setText(txt.substring(0,txt.length()-1));
+            bp.setOperator('+');
+            bp.setFirst_arg(0);
+            bp.setSec_arg(0);
 
         } else {
 
